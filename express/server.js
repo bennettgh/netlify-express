@@ -5,10 +5,13 @@ const serverless = require('serverless-http');
 const app = express();
 const bodyParser = require('body-parser');
 
+const html = fs.readFileSync('./server/index.html');
+
+
 const router = express.Router();
 router.get('/', (req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/html' });
-  res.write('<h1>Welcome to the Bean API!</h1><h3>To access the API data, make a GET request to <span style="color: papayawhip;">/api</span></h3>');
+  res.write(html);
   res.end();
 });
 
