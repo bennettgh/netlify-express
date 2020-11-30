@@ -4,9 +4,12 @@ const path = require('path');
 const serverless = require('serverless-http');
 const app = express();
 const bodyParser = require('body-parser');
+const fs = require('fs')
 
-const html = fs.readFileSync('./server/index.html');
 
+const html = fs.readFileSync('./express/index.html');
+
+console.log(html)
 
 const router = express.Router();
 router.get('/', (req, res) => {
